@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Ohlala Apps | 實用工具與獨立專案集合</title>
+  <meta name="description" content="Ohlala Apps - 個人獨立開發的 Web 應用與 Android 原生 App 集合。主打 100% 隱私本機運算、P2P 直傳、Google MediaPipe AI 影像處理、極限音量微調與純淨 QR Code 掃描器。" />
+  <meta name="keywords" content="Ohlala Apps, Web 應用, Android App, QR Code 掃描器, P2P 互傳, AI 去背, 浮水印去除, FineVolume, 作品集" />
+  <meta name="author" content="Ohlala" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ohlala Apps | 實用工具與獨立專案集合" />
+  <meta property="og:description" content="乾淨、快速、專注於本機隱私與極致效能的獨立工具箱。" />
+  <meta property="og:url" content="https://aiohlala.github.io/apps/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Ohlala Apps 首頁">
+        <span class="brand-dot"></span>
+        <span>Ohlala<span style="color: var(--primary-accent);">.apps</span></span>
+      </a>
+
+      <div class="nav-actions">
+        <span class="app-count-badge" id="appCountBadge">6 款應用</span>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="切換深淺色主題" title="切換深淺色主題">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-subtitle-tag">Portfolio & Fast Launcher</div>
+      <h1 class="hero-title">
+        シンプルで、<span class="hero-title-highlight">使いやすい</span>。
+      </h1>
+      <p class="hero-desc">
+        專為速度、直覺與本機隱私打造的應用集合。點擊即時開啟，手機電腦隨處可得。
+      </p>
+
+      <!-- Search & Filter Controls -->
+      <div class="filter-search-container">
+        <div class="search-bar-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="快速搜尋 App 名稱、關鍵字或技術（例如：QR, 音量, 去背）..." 
+            autocomplete="off"
+          />
+          <button class="clear-search-btn" id="clearSearchBtn" aria-label="清除搜尋">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="filter-tabs-row" role="tablist">
+          <button class="filter-tab active" data-filter="all" role="tab">全部 (All)</button>
+          <button class="filter-tab" data-filter="ai" role="tab">AI & 影像</button>
+          <button class="filter-tab" data-filter="tools" role="tab">實用工具</button>
+          <button class="filter-tab" data-filter="games" role="tab">遊戲娛樂</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empty State (Shown when search/filter has no results) -->
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">🔍</div>
+      <h3 class="empty-title">找不到符合的應用</h3>
+      <p class="empty-desc">請嘗試其他關鍵字或切換分類標籤。</p>
+    </div>
+
+    <!-- 1. Quick Swipe Deck (Horizontal Swipe Carousel for Mobile & Instant Launch) -->
+    <section class="swipe-deck-section" aria-label="快速啟動輪播">
+      <div class="section-header-row">
+        <div>
+          <div class="section-tagline">Quick Launcher</div>
+          <h2 class="section-title">快速左右滑動選單</h2>
+        </div>
+        <div class="carousel-nav-btns" aria-hidden="true">
+          <button class="carousel-btn" id="prevSwipeBtn" title="往左滑動" aria-label="往左滑動">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-btn" id="nextSwipeBtn" title="往右滑動" aria-label="往右滑動">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="swipeDeck" class="swipe-deck-container">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- 2. Compact Grid View (Overview Matrix) -->
+    <section class="app-grid-section" aria-label="應用列表">
+      <div class="section-header-row">
+        <div>
+          <div class="section-tagline">All Applications</div>
+          <h2 class="section-title">全工具快速矩陣</h2>
+        </div>
+      </div>
+
+      <div id="appGrid" class="app-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- 3. Detailed Showcase Section -->
+    <section class="showcase-section" aria-label="深度作品集展示">
+      <div class="section-header-row">
+        <div>
+          <div class="section-tagline">Detailed Showcase</div>
+          <h2 class="section-title">深度作品展示與架構介紹</h2>
+        </div>
+      </div>
+
+      <div id="showcaseList" class="showcase-list">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Ohlala.apps • Crafted with care, privacy and speed.</p>
+      <p class="footer-sub">持續擴充中 • 所有前端運算皆以保障使用者本機資料隱私為最高準則</p>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
