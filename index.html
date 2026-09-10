@@ -36,7 +36,15 @@
       </a>
 
       <div class="nav-actions">
+        <!-- Language Switcher: Chinese / English -->
+        <div class="lang-switch-group" role="group" aria-label="語言切換 Language Switcher">
+          <button class="lang-btn active" id="langZhBtn" onclick="setLanguage('zh')">中文</button>
+          <button class="lang-btn" id="langEnBtn" onclick="setLanguage('en')">EN</button>
+        </div>
+
         <span class="app-count-badge" id="appCountBadge">6 款應用</span>
+
+        <!-- Theme Toggle Button -->
         <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="切換深淺色主題" title="切換深淺色主題">
           <!-- Sun Icon (shown in dark mode) -->
           <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -167,7 +175,7 @@
   <!-- Minimalist Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© 2026 Ohlala.apps • Crafted with care, privacy and speed.</p>
+      <p>© 2026 Ohlala.apps • 專注隱私、效能與極簡美學。</p>
       <p class="footer-sub">持續擴充中 • 所有前端運算皆以保障使用者本機資料隱私為最高準則</p>
     </div>
   </footer>
