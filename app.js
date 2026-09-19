@@ -222,11 +222,11 @@ const APPS_DATA = [
     iconEmoji: '🐱',
     previewImage: 'assets/images/meow-battle.png',
     gradient: 'linear-gradient(135deg, #F43F5E 0%, #E11D48 100%)',
-    url: null,
-    status: 'coming_soon',
-    statusText: { zh: '即將登場', en: 'Coming Soon' },
-    statusClass: 'status-soon',
-    actionText: { zh: '即將開放連線', en: 'Coming Soon' },
+    url: 'https://meow-meow-battle-final.web.app/game.html',
+    status: 'online',
+    statusText: { zh: '已上線', en: 'Live Web' },
+    statusClass: 'status-online',
+    actionText: { zh: '立即開始遊戲', en: 'Play Game' },
     shortDesc: {
       zh: '選擇你的萌貓，保護罐罐！多人即時射擊對戰休閒遊戲。',
       en: 'Protect the food cans! Real-time multiplayer cat arena battle game.'
@@ -240,7 +240,7 @@ const APPS_DATA = [
       zh: ['多人即時連線房間對局', '電腦/手機雙搖桿手感適配', '多款可愛貓咪外觀切換', '隨開即玩的休閒對戰節奏'],
       en: ['Instant multiplayer room matchmaking', 'Dual touch joysticks for mobile', 'Custom adorable cat avatars', 'Fast-paced casual arcade battles']
     },
-    privacyBadge: { zh: '即將推出 • 敬請期待', en: 'Coming Soon' }
+    privacyBadge: { zh: '免安裝 • 瀏覽器即開即玩', en: 'No Install • Play in Browser' }
   }
 ];
 
