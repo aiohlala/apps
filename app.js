@@ -242,6 +242,38 @@ const APPS_DATA = [
     },
     privacyBadge: { zh: '免安裝 • 瀏覽器即開即玩', en: 'No Install • Play in Browser' }
   }
+,
+  {
+    id: 'snoozy',
+    title: { zh: '舒眠聲 Snoozy - 助眠白噪音', en: 'Snoozy: Sleep Sounds & Relax' },
+    category: 'tools',
+    categoryName: { zh: '實用工具', en: 'Utilities' },
+    badge: { zh: '即時演算法合成', en: 'Procedural Audio DSP' },
+    iconText: 'ZZZ',
+    iconImage: null,
+    iconEmoji: '🌙',
+    previewImage: 'assets/images/snoozy.png',
+    gradient: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #00FFA3 100%)',
+    url: 'https://aiohlala.github.io/goodsound-site/',
+    status: 'online',
+    statusText: { zh: '線上官網', en: 'Live Site' },
+    statusClass: 'status-online',
+    actionText: { zh: '開啟官方網站', en: 'Visit Website' },
+    shortDesc: {
+      zh: '純淨大自然原聲、演算法白噪音與微型 Lofi 旋律，守護深層好眠。',
+      en: 'Pure nature soundscapes, algorithmic white noise & subtle lofi melodies for deep sleep.'
+    },
+    longDesc: {
+      zh: '專為睡眠與深度專注打造的聲學音訊應用。原生演算法即時生成白噪音、粉紅噪音與棕色噪音，徹底告別傳統短音檔重複循環所帶來的聽覺疲勞；收錄純淨大自然雨聲、森林風聲、海浪與篝火柴火聲，並內建最後 30 秒平滑淡出定時器與動態夜鐘。100% 零廣告純淨架構，支援 Solana Seeker 生態系與 Web3 / 咖啡打賞贊助。',
+      en: 'Acoustic audio application crafted for deep sleep and restorative rest. Generates continuous procedural white, pink, and brown noise via real-time DSP to prevent repetitive loop fatigue. Blends pure high-fidelity rainfall, forest wind, ocean waves, crackling campfires, and subtle Lo-Fi melodies with an exponential 30s fadeout timer. 100% ad-free on Solana Seeker with Web3 & coffee tip support.'
+    },
+    techStack: ['Kotlin & Jetpack Compose', 'Real-time Audio DSP', 'Solana Mobile Stack (MWA 2.0)', 'Offline First Architecture'],
+    highlights: {
+      zh: ['即時演算法白噪音（無重複感）', '真實採集大自然環境音混音器', '最後 30 秒智慧平滑淡出定時器', 'Solana 生態系 100% 零廣告純淨體驗'],
+      en: ['Real-time procedural noise DSP (zero loops)', 'Multi-track natural ambience mixer', '30s exponential fadeout sleep timer', '100% ad-free for Solana dApp ecosystem']
+    },
+    privacyBadge: { zh: '100% 本地音訊運算 • 零追蹤', en: '100% On-device DSP • Zero Tracking' }
+  }
 ];
 
 // App State
