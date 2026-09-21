@@ -233,20 +233,6 @@ img {
   text-align: center;
 }
 
-.hero-subtitle-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  padding: 4px 14px;
-  border-radius: var(--radius-pill);
-  background: var(--primary-glow);
-  color: var(--primary-accent);
-  margin-bottom: 16px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
 
 .hero-title {
   font-size: clamp(2rem, 4.5vw, 3rem);

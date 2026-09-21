@@ -9,7 +9,7 @@ const I18N = {
     heroTag: 'Portfolio & Fast Launcher',
     heroTitlePrefix: '極簡純粹，',
     heroTitleHighlight: '一鍵即用',
-    heroDesc: '專為速度、直覺與本機隱私打造的應用集合。點擊即時開啟，手機電腦隨處可得。',
+    heroDesc: '專為速度、直覺與隱私打造的應用集合。',
     searchPlaceholder: '快速搜尋 App 名稱、關鍵字或技術（例如：互傳, 去背, 音量）...',
     filterAll: '全部 (All)',
     filterAi: 'AI & 影像',
@@ -59,7 +59,7 @@ const I18N = {
 const APPS_DATA = [
   {
     id: 'send2me',
-    title: { zh: '跨平台互傳', en: 'Send2Me P2P Transfer' },
+    title: { zh: '跨平台互傳Send2Me', en: 'Send2Me P2P Transfer' },
     category: 'tools',
     categoryName: { zh: '實用工具', en: 'Utilities' },
     badge: { zh: 'P2P 直傳 • 零伺服器', en: 'P2P Direct • Zero Server' },
@@ -68,7 +68,7 @@ const APPS_DATA = [
     iconEmoji: '⇄',
     previewImage: 'assets/images/send2me.png',
     gradient: 'linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)',
-    url: 'https://bluechoco.github.io/send2me/',
+    url: 'https://send2me.pages.dev/',
     status: 'online',
     statusText: { zh: 'Web 線上版', en: 'Live Web' },
     statusClass: 'status-online',
@@ -348,9 +348,6 @@ function updateStaticTexts() {
   }
 
   // Hero Texts
-  const heroSubtitleEl = document.querySelector('.hero-subtitle-tag');
-  if (heroSubtitleEl) heroSubtitleEl.textContent = t.heroTag;
-
   const heroTitleEl = document.querySelector('.hero-title');
   if (heroTitleEl) {
     heroTitleEl.innerHTML = `${t.heroTitlePrefix}<span class="hero-title-highlight">${t.heroTitleHighlight}</span>。`;
