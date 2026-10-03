@@ -195,7 +195,7 @@ const APPS_DATA = [
     status: 'online',
     statusText: { zh: 'Google Play 正式上架', en: 'Google Play Live' },
     statusClass: 'status-online',
-    actionText: { zh: '前往 Google Play 下載', en: 'Get on Google Play' },
+    actionText: { zh: 'Play 商店下載', en: 'Google Play' },
     shortDesc: {
       zh: '100% 免費無廣告！極速秒開的 QR Code 與條碼掃描器，支援相簿照片辨識，純淨極簡。',
       en: '100% Free & No Ads! Ultra-fast QR & barcode scanner with gallery photo scan. Clean & minimal.'
@@ -289,7 +289,7 @@ const APPS_DATA = [
     status: 'online',
     statusText: { zh: 'Android 原生 App', en: 'Android Native' },
     statusClass: 'status-online',
-    actionText: { zh: '專案介紹與下載', en: 'View Project & APK' },
+    actionText: { zh: '專案與下載', en: 'Download APK' },
     shortDesc: {
       zh: '輸入密碼一鍵永久解除保護，100% 離線運算絕不上傳伺服器。',
       en: 'One-tap permanent PDF password removal. 100% on-device & privacy-first.'

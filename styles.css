@@ -555,11 +555,16 @@ img {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 16px;
+  padding: 10px 12px;
   border-radius: var(--radius-md);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  white-space: nowrap;
   transition: all var(--transition-fast);
+}
+
+.swipe-btn .btn-arrow {
+  flex-shrink: 0;
 }
 
 .btn-primary {
