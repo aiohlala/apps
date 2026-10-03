@@ -183,33 +183,33 @@ const APPS_DATA = [
   },
   {
     id: 'purescan-qr',
-    title: { zh: 'QR Code 簡單掃', en: 'PureScan QR' },
+    title: { zh: 'QR Code 簡單掃描器', en: 'PureScan QR - Ad-Free Barcode Scanner' },
     category: 'tools',
     categoryName: { zh: '實用工具', en: 'Utilities' },
-    badge: { zh: 'Google ML Kit', en: 'Google ML Kit' },
+    badge: { zh: '100% 免費無廣告 • 相簿辨識', en: '100% Ad-Free • Gallery Scan' },
     iconText: 'QR',
     iconImage: 'assets/images/purescan-icon.png',
     previewImage: 'assets/images/purescan-qr.png',
     gradient: 'linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%)',
-    url: 'https://play.google.com/apps/testing/com.purescan.qr',
-    status: 'beta',
-    statusText: { zh: 'Google Play 封測中', en: 'Google Play Beta' },
-    statusClass: 'status-beta',
-    actionText: { zh: '前往 Play 商店測試', en: 'Join Play Beta' },
+    url: 'https://play.google.com/store/apps/details?id=com.purescan.qr',
+    status: 'online',
+    statusText: { zh: 'Google Play 正式上架', en: 'Google Play Live' },
+    statusClass: 'status-online',
+    actionText: { zh: '前往 Google Play 下載', en: 'Get on Google Play' },
     shortDesc: {
-      zh: '極速毫秒掃描，純淨無廣告，極簡輕量 Material 3 設計。',
-      en: 'Instant camera QR scanner. 100% ad-free, lightweight Material 3.'
+      zh: '100% 免費無廣告！極速秒開的 QR Code 與條碼掃描器，支援相簿照片辨識，純淨極簡。',
+      en: '100% Free & No Ads! Ultra-fast QR & barcode scanner with gallery photo scan. Clean & minimal.'
     },
     longDesc: {
-      zh: '專為追求極致掃描速度與乾淨體驗打造的原生 Android QR Code 掃描器。基於 Google ML Kit 與 CameraX 底層技術，支援毫秒級即時對焦解碼、一鍵複製與網址安全跳轉。堅持 100% 無廣告、不收集任何使用者隱私資料。',
-      en: 'Native Android QR Code scanner built for pure speed and clean UX. Powered by CameraX and Google ML Kit for sub-second barcode detection, one-tap clipboard copy, and safe URL navigation. Completely ad-free and tracking-free.'
+      zh: '專為日常快速掃碼設計的輕量級工具。100% 完全免費、零廣告干擾、無任何應用程式內購，還給您最純粹、秒開即掃的極致體驗！基於 Google ML Kit 與 CameraX 底層技術，支援毫秒級即時對焦解碼、相簿圖片條碼辨識、一鍵複製與網址安全跳轉，零多餘權限、極致省電不卡頓。',
+      en: 'A lightweight Android utility built for instant everyday scanning. 100% free forever, zero ads, zero tracking, and no in-app purchases. Powered by Google ML Kit and CameraX for sub-second detection, gallery photo & screenshot decoding, one-tap clipboard copy, and safe URL launch with minimal battery consumption.'
     },
     techStack: ['Android Jetpack Compose', 'CameraX', 'Google ML Kit', 'Material 3'],
     highlights: {
-      zh: ['Google ML Kit 毫秒辨識', '完全零廣告零干擾', '原生 Material 3 設計', '安全網址跳轉防護'],
-      en: ['Sub-second ML Kit detection', 'Completely ad-free & zero tracking', 'Clean Material 3 Android UI', 'Safe URL intent handling']
+      zh: ['100% 永久免費無廣告', '相簿照片條碼智慧辨識', 'Google ML Kit 毫秒解碼', '零多餘權限 • 絕對隱私保護'],
+      en: ['100% Free & Completely Ad-Free', 'Gallery Photo & Screenshot Decode', 'Sub-second Google ML Kit Detection', 'Zero Permissions • Zero Tracking']
     },
-    privacyBadge: { zh: '100% 離線掃描 • 零數據收集', en: '100% Offline • Zero Data Collection' }
+    privacyBadge: { zh: '100% 離線辨識 • 零數據收集', en: '100% Offline • Zero Data Collection' }
   },
   {
     id: 'meow-battle',
