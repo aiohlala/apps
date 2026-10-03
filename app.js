@@ -273,6 +273,37 @@ const APPS_DATA = [
       en: ['Real-time procedural noise DSP (zero loops)', 'Multi-track natural ambience mixer', '30s exponential fadeout sleep timer', '100% ad-free for Solana dApp ecosystem']
     },
     privacyBadge: { zh: '100% 本地音訊運算 • 零追蹤', en: '100% On-device DSP • Zero Tracking' }
+  },
+  {
+    id: 'pdf-unlocker',
+    title: { zh: 'PDF解鎖助手', en: 'PDF Unlocker' },
+    category: 'tools',
+    categoryName: { zh: '實用工具', en: 'Utilities' },
+    badge: { zh: '100% 離線隱私 • 4MB', en: '100% Offline • 4MB Lean' },
+    iconText: 'PDF',
+    iconImage: 'assets/images/pdf-unlocker-icon.png',
+    iconEmoji: '🔓',
+    previewImage: 'assets/images/pdf-unlocker.png',
+    gradient: 'linear-gradient(135deg, #7BA893 0%, #3B82F6 100%)',
+    url: 'papermint/',
+    status: 'online',
+    statusText: { zh: 'Android 原生 App', en: 'Android Native' },
+    statusClass: 'status-online',
+    actionText: { zh: '專案介紹與下載', en: 'View Project & APK' },
+    shortDesc: {
+      zh: '輸入密碼一鍵永久解除保護，100% 離線運算絕不上傳伺服器。',
+      en: 'One-tap permanent PDF password removal. 100% on-device & privacy-first.'
+    },
+    longDesc: {
+      zh: '專為保護個人與商業機密文件隱私打造的原生 Android PDF 密碼安全清除工具。針對電子帳單、薪資單或合約等每次開啟皆需繁瑣輸入密碼的文件，只要輸入一次正確密碼即可永久解鎖，生成無密碼乾淨版本方便歸檔與列印。採用 iText 7 核心進行 100% 離線處理，完全不需要網路權限，不收集任何個人文件或密碼。極致優化僅 4MB，支援 10 國語系與 Material 3 莫蘭迪清新美學。',
+      en: 'A privacy-first native Android utility designed to permanently strip password protection from known-password PDFs (e.g. bank statements, payslips, invoices). Decrypt once and save a clean, password-free copy for seamless printing, archiving, and sharing. Powered by an optimized offline iText 7 engine running strictly on-device with zero network transmission. Ultra-lightweight at just 4MB with full 10-language localization and a soothing Morandi-mint Material 3 UI.'
+    },
+    techStack: ['Android Jetpack Compose', 'iText 7 Offline Engine', 'Material 3 & Coroutines', '10-Language i18n'],
+    highlights: {
+      zh: ['輸入一次密碼即可永久解鎖歸檔', '100% 離線本機運算，絕不上傳檔案', '極致輕量僅 4MB，秒開不佔手機空間', '內建 10 國語系與莫蘭迪優雅設計'],
+      en: ['One-tap permanent password removal', '100% strictly offline, zero data upload', 'Ultra-lean 4MB footprint, instant launch', 'Full 10-language support & Morandi UI']
+    },
+    privacyBadge: { zh: '100% 離線本機處理 • 零數據上傳', en: '100% On-Device • Zero Cloud Upload' }
   }
 ];
 
