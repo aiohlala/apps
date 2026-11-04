@@ -27,7 +27,17 @@ const I18N = {
     emptyTitle: '找不到符合的應用',
     emptyDesc: '請嘗試其他關鍵字或切換分類標籤。',
     footerCopyright: '© 2026 Ohlala.apps • 專注隱私、效能與極簡美學。',
-    footerSub: '持續擴充中 • 所有前端運算皆以保障使用者本機資料隱私為最高準則'
+    footerSub: '持續擴充中 • 所有前端運算皆以保障使用者本機資料隱私為最高準則',
+    pwaInstallText: '安裝 App',
+    pwaPromptTitle: '安裝 Ohlala Apps',
+    pwaPromptSub: '存到手機主畫面，免開瀏覽器直接啟動',
+    pwaPromptInstallBtn: '安裝',
+    iosModalTitle: '安裝到手機主畫面',
+    iosModalDesc: '像原生 App 一樣全螢幕開啟、零網址列',
+    iosStep1: '點擊 Safari 底部的「分享」按鈕',
+    iosStep2: '在選單中向下滑動，選擇「加入主畫面」➕',
+    iosStep3: '點擊右上角的「新增」，完成安裝！',
+    iosModalClose: '我知道了'
   },
   en: {
     appCount: 'Apps',
@@ -52,7 +62,17 @@ const I18N = {
     emptyTitle: 'No Applications Found',
     emptyDesc: 'Try adjusting your search query or switching categories.',
     footerCopyright: '© 2026 Ohlala.apps • Focused on privacy, performance & minimalism.',
-    footerSub: 'Continuously expanding • All client-side computing adheres strictly to user privacy.'
+    footerSub: 'Continuously expanding • All client-side computing adheres strictly to user privacy.',
+    pwaInstallText: 'Install App',
+    pwaPromptTitle: 'Install Ohlala Apps',
+    pwaPromptSub: 'Add to home screen to use as standalone app',
+    pwaPromptInstallBtn: 'Install',
+    iosModalTitle: 'Add to iPhone Home Screen',
+    iosModalDesc: 'Launch as a standalone app with no browser bars',
+    iosStep1: 'Tap the Share button at the bottom of Safari',
+    iosStep2: 'Scroll down and tap "Add to Home Screen" ➕',
+    iosStep3: 'Tap "Add" in the top right corner. Done!',
+    iosModalClose: 'Got it'
   }
 };
 
@@ -335,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   setupEventListeners();
   setupSwipeControls();
+  setupPWA();
 });
 
 // Language Management
@@ -443,6 +464,39 @@ function updateStaticTexts() {
     if (p1) p1.textContent = t.footerCopyright;
     if (p2) p2.textContent = t.footerSub;
   }
+
+  // PWA Elements
+  const pwaInstallText = document.getElementById('pwaInstallText');
+  if (pwaInstallText) pwaInstallText.textContent = t.pwaInstallText;
+
+  const pwaPromptTitle = document.getElementById('pwaPromptTitle');
+  if (pwaPromptTitle) pwaPromptTitle.textContent = t.pwaPromptTitle;
+
+  const pwaPromptSub = document.getElementById('pwaPromptSub');
+  if (pwaPromptSub) pwaPromptSub.textContent = t.pwaPromptSub;
+
+  const pwaPromptInstallBtn = document.getElementById('pwaPromptInstallBtn');
+  if (pwaPromptInstallBtn) pwaPromptInstallBtn.textContent = t.pwaPromptInstallBtn;
+
+  const iosModalTitle = document.getElementById('iosModalTitle');
+  if (iosModalTitle) iosModalTitle.textContent = t.iosModalTitle;
+
+  const iosModalDesc = document.getElementById('iosModalDesc');
+  if (iosModalDesc) iosModalDesc.textContent = t.iosModalDesc;
+
+  const iosStep1 = document.getElementById('iosStep1');
+  if (iosStep1) {
+    iosStep1.innerHTML = `${t.iosStep1} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; display: inline;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>`;
+  }
+
+  const iosStep2 = document.getElementById('iosStep2');
+  if (iosStep2) iosStep2.textContent = t.iosStep2;
+
+  const iosStep3 = document.getElementById('iosStep3');
+  if (iosStep3) iosStep3.textContent = t.iosStep3;
+
+  const iosModalCloseBtn = document.getElementById('iosModalCloseBtn');
+  if (iosModalCloseBtn) iosModalCloseBtn.textContent = t.iosModalClose;
 }
 
 function initTheme() {
@@ -739,3 +793,123 @@ window.scrollToShowcase = function(id) {
     }, 1800);
   }
 };
+
+// Progressive Web App (PWA) & Service Worker Registration
+let deferredInstallPrompt = null;
+
+function setupPWA() {
+  // 1. Register Service Worker for PWA WebAPK installability
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => {
+          console.log('[PWA] Service Worker registered scope:', reg.scope);
+        })
+        .catch((err) => {
+          console.warn('[PWA] Service Worker registration failed:', err);
+        });
+    });
+  }
+
+  const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+  const pwaMobilePrompt = document.getElementById('pwaMobilePrompt');
+  const pwaPromptInstallBtn = document.getElementById('pwaPromptInstallBtn');
+  const pwaPromptCloseBtn = document.getElementById('pwaPromptCloseBtn');
+  const iosInstallModal = document.getElementById('iosInstallModal');
+  const iosModalCloseBtn = document.getElementById('iosModalCloseBtn');
+
+  // Check if running in standalone mode (already installed as PWA or saved to homescreen)
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                       window.navigator.standalone === true;
+
+  if (isStandalone) {
+    if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
+    if (pwaMobilePrompt) pwaMobilePrompt.style.display = 'none';
+    return;
+  }
+
+  const isIOS = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()) && !window.MSStream;
+
+  // Listen for Chrome / Android beforeinstallprompt
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+
+    if (pwaInstallBtn) {
+      pwaInstallBtn.style.display = 'inline-flex';
+    }
+
+    const dismissed = sessionStorage.getItem('ohlala_pwa_dismissed');
+    if (!dismissed && pwaMobilePrompt) {
+      pwaMobilePrompt.style.display = 'flex';
+    }
+  });
+
+  const triggerInstall = async () => {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      const { outcome } = await deferredInstallPrompt.userChoice;
+      if (outcome === 'accepted') {
+        if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
+        if (pwaMobilePrompt) pwaMobilePrompt.style.display = 'none';
+      }
+      deferredInstallPrompt = null;
+    } else if (isIOS) {
+      if (iosInstallModal) iosInstallModal.style.display = 'flex';
+    } else {
+      // Fallback hint for desktop or unsupported browsers
+      alert(currentLang === 'zh'
+        ? '請在手機瀏覽器選單點擊「安裝應用程式」或「加到主畫面」即可完成安裝！'
+        : 'Please tap "Install app" or "Add to Home Screen" in your browser menu!');
+    }
+  };
+
+  if (pwaInstallBtn) {
+    pwaInstallBtn.addEventListener('click', triggerInstall);
+  }
+  if (pwaPromptInstallBtn) {
+    pwaPromptInstallBtn.addEventListener('click', triggerInstall);
+  }
+
+  // Dismiss mobile prompt for session
+  if (pwaPromptCloseBtn && pwaMobilePrompt) {
+    pwaPromptCloseBtn.addEventListener('click', () => {
+      pwaMobilePrompt.style.display = 'none';
+      sessionStorage.setItem('ohlala_pwa_dismissed', '1');
+    });
+  }
+
+  // Close iOS guidance modal
+  if (iosModalCloseBtn && iosInstallModal) {
+    iosModalCloseBtn.addEventListener('click', () => {
+      iosInstallModal.style.display = 'none';
+    });
+  }
+  if (iosInstallModal) {
+    iosInstallModal.addEventListener('click', (e) => {
+      if (e.target === iosInstallModal) {
+        iosInstallModal.style.display = 'none';
+      }
+    });
+  }
+
+  // For iOS Safari users, display install button in header and floating prompt
+  if (isIOS && !isStandalone) {
+    if (pwaInstallBtn) {
+      pwaInstallBtn.style.display = 'inline-flex';
+    }
+    const dismissed = sessionStorage.getItem('ohlala_pwa_dismissed');
+    if (!dismissed && pwaMobilePrompt) {
+      pwaMobilePrompt.style.display = 'flex';
+    }
+  }
+
+  // When installed, hide all prompts
+  window.addEventListener('appinstalled', () => {
+    console.log('[PWA] Ohlala Apps successfully installed!');
+    if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
+    if (pwaMobilePrompt) pwaMobilePrompt.style.display = 'none';
+    deferredInstallPrompt = null;
+  });
+}
+
