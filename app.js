@@ -78,6 +78,37 @@ const I18N = {
 
 const APPS_DATA = [
   {
+    id: 'mine',
+    title: { zh: 'MINE 檔案管理程式', en: 'MINE File Manager' },
+    category: 'tools',
+    categoryName: { zh: '實用工具', en: 'Utilities' },
+    badge: { zh: '無限制多視窗 • MDIE 傳承', en: 'Unlimited MDI • Gesture-Driven' },
+    iconText: 'MINE',
+    iconImage: null,
+    iconEmoji: '🗂️',
+    previewImage: 'assets/images/mine.png',
+    gradient: 'linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)',
+    url: 'https://aiohlala.github.io/MINE-Manager/',
+    status: 'online',
+    statusText: { zh: '官網發布中', en: 'Live Showcase' },
+    statusClass: 'status-online',
+    actionText: { zh: '前往官網與下載', en: 'Visit Website & Download' },
+    shortDesc: {
+      zh: '致敬經典 MDIE 的新世代極輕量檔案總管。支援滑鼠手勢、無限制多視窗並排，解決特殊編碼、HEIC 與 SMB 離線卡死。',
+      en: 'Modern successor to classic MDIE. Lightweight MDI file manager with mouse gestures, unlimited window tiling, and crash-proof sandbox.'
+    },
+    longDesc: {
+      zh: '致敬日本開發者佐野先生於 2007 年打造的傳奇檔案管理神器 MDIE，以現代純 Rust 記憶體安全技術重新打造。支援滑鼠右鍵手勢軌跡操作（上一頁、下一頁、關閉視窗、並排等）、無限制 MDI 子視窗並排（左右、上下、智慧網格、自由拖放），單一執行檔僅 5 MB，開 10+ 視窗記憶體佔用僅 25 MB。徹底解決原版 MDIE 遇到特殊編碼資料夾當機、點選 HEIC 閃退、以及 SMB 遠端資料夾未連線時卡死 60 秒的歷史缺陷。',
+      en: 'Honoring classic MDIE (Multiple Document Interface Explorer) with a 2026 pure Rust memory-safe architecture. Features intuitive mouse gestures, unlimited child window tiling (horizontal, vertical, smart grid, cascade), and a 5 MB standalone portable executable using only ~25 MB RAM. Solves legacy MDIE crashes with special character encodings, HEIC image previews, and disconnected SMB network shares.'
+    },
+    techStack: ['Rust 2021', 'egui / eframe', 'Multi-Window MDI', 'Mouse Gestures', 'Crash-Proof Sandbox', 'Portable JSON'],
+    highlights: {
+      zh: ['無限制多視窗智慧網格並排', 'MDIE 經典滑鼠右鍵手勢與滾輪跳轉', '特殊編碼與 HEIC 沙盒防崩潰防護', '非阻塞式 SMB 網路磁碟 1.2s 逾時探測', '多執行緒極速搜尋與條件勾選', '100% 綠色免安裝與右鍵選單整合'],
+      en: ['Unlimited MDI child window tiling', 'MDIE classic mouse gestures & wheel jump', 'Crash-proof HEIC & special encoding sandbox', 'Non-blocking SMB probe with 1.2s timeout', 'Multi-threaded deep search with match selection', '100% portable mode & shell context menu script']
+    },
+    privacyBadge: { zh: '100% 本機端檔案管理 • 零外部雲端傳輸', en: '100% Local File Management • Zero Cloud Upload' }
+  },
+  {
     id: 'send2me',
     title: { zh: '跨平台互傳Send2Me', en: 'Send2Me P2P Transfer' },
     category: 'tools',
