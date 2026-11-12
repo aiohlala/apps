@@ -345,13 +345,13 @@ const APPS_DATA = [
       en: 'Modern successor to classic MDIE. Ultra-lightweight MDI file manager with mouse gestures, unlimited window tiling, and modern 64-bit OS adaptation.'
     },
     longDesc: {
-      zh: '致敬日本經典檔案管理神器 MDIE（Multiple Document Interface Explorer），以 2026 年現代純 Rust 記憶體安全架構與硬體加速渲染引擎重新打造。完整重現滑鼠右鍵手勢軌跡操作、無限制 MDI 子視窗並排與八方向邊框自由縮放，單一執行檔僅約 5 MB、開啟 10+ 視窗記憶體僅佔約 25 MB。全面改良舊世代架構在現代作業系統下的相容性與閃退無回應缺陷，導入非同步非阻塞式 I/O 執行緒池、沙盒隔離防護、高解析度 4K DPI 自適應渲染與一鍵深淺色主題切換，完美支援 Windows 10/11、macOS (Apple Silicon) 與 Linux。',
-      en: 'A modern successor to classic MDIE built from the ground up in pure Rust with GPU-accelerated rendering. Combines iconic right-click mouse gestures, unlimited MDI child window tiling, and free 8-way border resizing in a 5 MB standalone executable (~25 MB RAM). Resolves legacy compatibility and stability bottlenecks through an asynchronous non-blocking I/O engine, thread-isolated sandboxing, High-DPI 4K scaling, and instant dark/light theme switching across Windows 10/11, macOS, and Linux.'
+      zh: '致敬日本經典檔案管理神器 MDIE（Multiple Document Interface Explorer），以 2026 年現代純 Rust 記憶體安全架構與硬體加速渲染引擎重新打造。完整重現滑鼠右鍵手勢軌跡操作、無限制 MDI 子視窗並排與八方向邊框自由縮放，並支援本機電腦磁碟容量總覽、縮圖/清單/詳細資料等多樣檢視模式、拖曳調整欄位順序、字體與縮圖即時縮放及右鍵系統內容（Properties）。單一執行檔小於 10 MB、日常多視窗運作記憶體僅佔約 30–60 MB。全面改良舊世代架構在現代作業系統下的相容性與閃退無回應缺陷，導入非同步非阻塞式 I/O 執行緒池、沙盒隔離防護、高解析度 4K DPI 自適應渲染與一鍵深淺色主題切換，完美支援 Windows 10/11 與 macOS (Apple Silicon)。',
+      en: 'A modern successor to classic MDIE built from the ground up in pure Rust with GPU-accelerated rendering. Combines iconic right-click mouse gestures, unlimited MDI child window tiling, 8-way border resizing, This PC drive capacity overview, Thumbnails/List/Details view modes with live thumbnail & font sliders, draggable columns, and native Properties dialogs in a < 10 MB standalone executable (~30–60 MB RAM). Resolves legacy compatibility and stability bottlenecks through an asynchronous non-blocking I/O engine, thread-isolated sandboxing, High-DPI 4K scaling, and instant dark/light theme switching across Windows 10/11 and macOS.'
     },
     techStack: ['Rust 2021', 'GPU Accelerated UI', 'Async Non-Blocking I/O', 'Multi-Window MDI', 'Mouse Gestures', 'Cross-Platform 64-bit'],
     highlights: {
-      zh: ['無限制多視窗並排與邊框自由縮放', 'MDIE 經典滑鼠右鍵手勢與滾輪跳轉', '非同步 I/O 與沙盒隔離防崩潰架構', '原生 64 位元與 4K High-DPI 系統適配', '多執行緒極速平行索引與條件勾選', '100% 綠色免安裝與深淺色主題切換'],
-      en: ['Unlimited MDI window tiling & 8-way resize', 'MDIE classic mouse gestures & wheel jump', 'Async non-blocking I/O & crash-isolated sandbox', 'Native 64-bit & 4K High-DPI OS adaptation', 'Multi-threaded parallel search & match selection', '100% portable mode & instant dark/light themes']
+      zh: ['無限制多視窗並排與邊框自由縮放', 'MDIE 經典滑鼠右鍵手勢與滾輪跳轉', '本機電腦磁碟容量總覽與多種檢視/縮圖拉條', '非同步 I/O、沙盒隔離防崩潰與右鍵系統內容', '多執行緒極速平行索引與可拖曳自訂欄位', '小於 10 MB 綠色免安裝與深淺色主題切換'],
+      en: ['Unlimited MDI window tiling & 8-way resize', 'MDIE classic mouse gestures & wheel jump', 'This PC drive capacity & Thumbnails/List/Details views', 'Async non-blocking I/O & native Properties dialog', 'Multi-threaded parallel search & draggable columns', '< 10 MB portable binary & instant dark/light themes']
     },
     privacyBadge: { zh: '100% 本機端檔案管理 • 零外部雲端傳輸', en: '100% Local File Management • Zero Cloud Upload' }
   }
