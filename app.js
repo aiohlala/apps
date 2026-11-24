@@ -354,6 +354,49 @@ const APPS_DATA = [
       en: ['Unlimited MDI window tiling & 8-way resize', 'MDIE classic mouse gestures & wheel jump', 'This PC drive capacity & Thumbnails/List/Details views', 'Async non-blocking I/O & native Properties dialog', 'Multi-threaded parallel search & draggable columns', '< 10 MB portable binary & instant dark/light themes']
     },
     privacyBadge: { zh: '100% 本機端檔案管理 • 零外部雲端傳輸', en: '100% Local File Management • Zero Cloud Upload' }
+  },
+  {
+    id: 'cyberzero',
+    title: { zh: 'CyberZero 輕量辦公文件器', en: 'CyberZero Office & PDF Suite' },
+    category: 'tools',
+    categoryName: { zh: '實用工具', en: 'Utilities' },
+    badge: { zh: '免付費 Office • 多分頁並排', en: 'Zero Paywall • Split View' },
+    iconText: 'CZ',
+    iconImage: 'assets/images/cyberzero-icon.png',
+    iconEmoji: '⚡',
+    previewImage: 'assets/images/cyberzero.png',
+    gradient: 'linear-gradient(135deg, #00F0FF 0%, #7C3AED 55%, #FF2A85 100%)',
+    url: 'https://aiohlala.github.io/CyberZero-Zone/',
+    status: 'online',
+    statusText: { zh: '官網發布中', en: 'Live Showcase' },
+    statusClass: 'status-online',
+    actionText: { zh: '前往官網與下載', en: 'Visit Website & Download' },
+    shortDesc: {
+      zh: '跨 Windows 與 macOS 的超輕量綠色免安裝程式。免買付費 Office，輕鬆開啟與編修 Word、Excel、PowerPoint 與 PDF，並支援多重畫面並排顯示與 PDF 手寫簽名。',
+      en: 'Ultra-lightweight portable viewer & editor for Windows and macOS. Open and edit Word, Excel, PowerPoint, and PDF without paid Office, featuring multi-pane split view and precision PDF signing.'
+    },
+    longDesc: {
+      zh: '專為沒安裝付費版 Office 的電腦打造，設為預設開啟程式後，雙擊文件就能秒開閱讀與修改，徹底告別惱人的 Office 付費彈窗！單一軟體即可同時處理 Word、Excel、PowerPoint 與 PDF 四大常用檔案，支援直接編輯文字與表格、公式自動計算、一鍵另存 PDF、以及在 PDF 上精準點選位置放上手寫簽名或印章。更內建獨立多分頁與「左右並排 / 上下並排 / 四格網格」分割畫面，讓您一邊看合約一邊核對報表。體積僅約 3 MB、免安裝拷貝到隨身碟即可使用，並提供經典、夜幕藍、賽博龐克三種介面風格自由切換，支援 Windows 10/11 與 macOS。',
+      en: 'Built for computers without paid Microsoft Office—set it as your default viewer to open and edit documents instantly with zero paywall popups. Handles Word, Excel, PowerPoint, and PDF all in one lightweight (~3 MB) portable app. Edit documents and spreadsheets with automatic formula calculation, export directly to PDF, and place handwritten signatures or stamps precisely anywhere on a PDF. Includes multi-tab browsing and side-by-side / vertical / 4-way split-screen views, plus Classic, Midnight Blue, and Cyberpunk themes across Windows 10/11 and macOS.'
+    },
+    techStack: ['Windows 10/11', 'macOS', '綠色免安裝', 'Word / Excel / PPT / PDF', '多重畫面並排', 'PDF 精準簽名'],
+    highlights: {
+      zh: [
+        '開啟並編修 Word、Excel、PowerPoint 與 PDF 檔案',
+        'PDF 精準點選位置手寫簽名、蓋章與一鍵轉檔',
+        '獨立多分頁與左右／上下／四格多重畫面並排顯示',
+        '免安裝綠色輕量版（約 3 MB），支援 Windows 與 macOS',
+        '內建經典、夜幕藍、賽博龐克三種介面主題切換'
+      ],
+      en: [
+        'Open & edit Word, Excel, PowerPoint, and PDF files',
+        'Precision PDF signature placement, stamps & conversion',
+        'Multi-tab workspace with side-by-side & 4-way split view',
+        'Ultra-lightweight portable (~3 MB) for Windows & macOS',
+        'Switchable Classic, Midnight Blue, and Cyberpunk themes'
+      ]
+    },
+    privacyBadge: { zh: '100% 離線本機運作 • 零付費蓋板與廣告', en: '100% Offline • Zero Paywall & Ads' }
   }
 ];
 
