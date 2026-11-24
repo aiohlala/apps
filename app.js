@@ -372,17 +372,18 @@ const APPS_DATA = [
     statusClass: 'status-online',
     actionText: { zh: '前往官網與下載', en: 'Visit Website & Download' },
     shortDesc: {
-      zh: '跨 Windows 與 macOS 的超輕量綠色免安裝程式。免買付費 Office，輕鬆開啟與編修 Word、Excel、PowerPoint 與 PDF，並支援多重畫面並排顯示與 PDF 手寫簽名。',
-      en: 'Ultra-lightweight portable viewer & editor for Windows and macOS. Open and edit Word, Excel, PowerPoint, and PDF without paid Office, featuring multi-pane split view and precision PDF signing.'
+      zh: '跨 Windows 與 macOS 的超輕量綠色免安裝程式。免買付費 Office，輕鬆開啟與編修 Word、Excel、PowerPoint 與 PDF，支援 PDF 解除密碼另存、精準簽名與多重畫面並排顯示。',
+      en: 'Ultra-lightweight portable viewer & editor for Windows and macOS. Open and edit Word, Excel, PowerPoint, and PDF without paid Office, with PDF password removal, precision signing, and split view.'
     },
     longDesc: {
-      zh: '專為沒安裝付費版 Office 的電腦打造，設為預設開啟程式後，雙擊文件就能秒開閱讀與修改，徹底告別惱人的 Office 付費彈窗！單一軟體即可同時處理 Word、Excel、PowerPoint 與 PDF 四大常用檔案，支援直接編輯文字與表格、公式自動計算、一鍵另存 PDF、以及在 PDF 上精準點選位置放上手寫簽名或印章。更內建獨立多分頁與「左右並排 / 上下並排 / 四格網格」分割畫面，讓您一邊看合約一邊核對報表。體積僅約 3 MB、免安裝拷貝到隨身碟即可使用，並提供經典、夜幕藍、賽博龐克三種介面風格自由切換，支援 Windows 10/11 與 macOS。',
-      en: 'Built for computers without paid Microsoft Office—set it as your default viewer to open and edit documents instantly with zero paywall popups. Handles Word, Excel, PowerPoint, and PDF all in one lightweight (~3 MB) portable app. Edit documents and spreadsheets with automatic formula calculation, export directly to PDF, and place handwritten signatures or stamps precisely anywhere on a PDF. Includes multi-tab browsing and side-by-side / vertical / 4-way split-screen views, plus Classic, Midnight Blue, and Cyberpunk themes across Windows 10/11 and macOS.'
+      zh: '專為沒安裝付費版 Office 的電腦打造，設為預設開啟程式後，雙擊文件就能秒開閱讀與修改，徹底告別惱人的 Office 付費彈窗！單一軟體即可同時處理 Word、Excel、PowerPoint 與 PDF 四大常用檔案，支援直接編輯文字與表格、公式自動計算、免印表機一鍵匯出 PDF、在 PDF 上精準點選位置放上手寫簽名或印章，以及開啟加密 PDF 後一鍵「解除密碼並另存無密碼版」方便日後歸檔。更內建獨立多分頁與「左右並排 / 上下並排 / 四格網格」分割畫面，讓您一邊看合約一邊核對報表。體積僅約 3 MB、免安裝拷貝到隨身碟即可使用，並提供經典、夜幕藍、賽博龐克三種介面風格自由切換，支援 Windows 10/11 與 macOS。',
+      en: 'Built for computers without paid Microsoft Office—set it as your default viewer to open and edit documents instantly with zero paywall popups. Handles Word, Excel, PowerPoint, and PDF all in one lightweight (~3 MB) portable app. Edit documents and spreadsheets with automatic formula calculation, export directly to PDF, place handwritten signatures or stamps precisely anywhere on a PDF, and unlock password-protected PDFs to save clean password-free copies. Includes multi-tab browsing and side-by-side / vertical / 4-way split-screen views, plus Classic, Midnight Blue, and Cyberpunk themes across Windows 10/11 and macOS.'
     },
-    techStack: ['Windows 10/11', 'macOS', '綠色免安裝', 'Word / Excel / PPT / PDF', '多重畫面並排', 'PDF 精準簽名'],
+    techStack: ['Windows 10/11', 'macOS', '綠色免安裝', 'Word / Excel / PPT / PDF', '多重畫面並排', 'PDF 簽名與去密碼'],
     highlights: {
       zh: [
         '開啟並編修 Word、Excel、PowerPoint 與 PDF 檔案',
+        '開啟加密 PDF 自動詢問密碼，支援一鍵解除密碼另存無密碼版',
         'PDF 精準點選位置手寫簽名、蓋章與一鍵轉檔',
         '獨立多分頁與左右／上下／四格多重畫面並排顯示',
         '免安裝綠色輕量版（約 3 MB），支援 Windows 與 macOS',
@@ -390,6 +391,7 @@ const APPS_DATA = [
       ],
       en: [
         'Open & edit Word, Excel, PowerPoint, and PDF files',
+        'Unlock encrypted PDFs & save clean password-free copies',
         'Precision PDF signature placement, stamps & conversion',
         'Multi-tab workspace with side-by-side & 4-way split view',
         'Ultra-lightweight portable (~3 MB) for Windows & macOS',
